@@ -12,7 +12,7 @@ export default function Register() {
   const submit = async (e) => {
     e.preventDefault()
     try {
-      await axios.post('https://campussync.onrender.com/api/auth/register', form)
+      await axios.post('https://campussync-jtdq.onrender.com/api/auth/register', form)
       navigate('/login')
     } catch (err) {
       setError(err.response?.data?.message || 'Registration failed')
