@@ -13,7 +13,7 @@ export default function CreateEvent() {
   const submit = async (e) => {
     e.preventDefault()
     try {
-      await axios.post('http://localhost:5000/api/events', form,
+      await axios.post('https://campussync.onrender.com/api/events', form,
         { headers: { Authorization: `Bearer ${token}` } })
       setMsg('Event created!')
       setTimeout(() => navigate('/events'), 1500)

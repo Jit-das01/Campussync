@@ -7,12 +7,12 @@ export default function Events() {
   const token = localStorage.getItem('token')
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/events').then(r => setEvents(r.data))
+    axios.get('https://campussync.onrender.com/api/events').then(r => setEvents(r.data))
   }, [])
 
   const register = async (event_id) => {
     try {
-      const { data } = await axios.post('http://localhost:5000/api/registrations', { event_id },
+      const { data } = await axios.post('https://campussync.onrender.com/api/registrations', { event_id },
         { headers: { Authorization: `Bearer ${token}` } })
       setMsg('Registered! Check My Tickets for your QR code.')
       setEvents(ev => ev.map(e => e.id === event_id ? { ...e, seats_left: e.seats_left - 1 } : e))

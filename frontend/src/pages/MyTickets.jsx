@@ -6,7 +6,7 @@ export default function MyTickets() {
   const token = localStorage.getItem('token')
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/registrations/mine',
+    axios.get('https://campussync.onrender.com/api/registrations/mine',
       { headers: { Authorization: `Bearer ${token}` } })
       .then(r => setTickets(r.data))
   }, [])

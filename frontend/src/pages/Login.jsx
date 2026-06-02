@@ -10,7 +10,7 @@ export default function Login() {
   const submit = async (e) => {
     e.preventDefault()
     try {
-      const { data } = await axios.post('http://localhost:5000/api/auth/login', form)
+      const { data } = await axios.post('https://campussync.onrender.com/api/auth/login', form)
       localStorage.setItem('token', data.token)
       localStorage.setItem('user', JSON.stringify(data.user))
       navigate('/events')
