@@ -12,6 +12,8 @@ app.use('/api/registrations', require('./routes/registrations'));
 
 app.get('/', (req, res) => res.send('CampusSync API running'));
 
-app.listen(process.env.PORT, () =>
-  console.log(`Server running on port ${process.env.PORT}`)
-);
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+    console.log(`Server is running perfectly on port ${PORT}`);
+});
